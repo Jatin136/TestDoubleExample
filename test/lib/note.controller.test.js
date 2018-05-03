@@ -6,7 +6,7 @@ describe('NoteController', () => {
     beforeEach(() => {
         noteControllerTest = td.replace('../../app/controllers/note.controller');
     });
-    it('findAll executed successfully', () => {
+    it('findAll executed successfully', function() {
 
         // this is called stubing
         td.when(noteControllerTest.findAll()).thenReturn({
@@ -22,7 +22,7 @@ describe('NoteController', () => {
         td.reset();
     });
 
-    it('findOne executed successfully', () => {
+    it('findOne executed successfully', function() {
 
         td.when(noteControllerTest.findOne(), {
             ignoreExtraArgs: true
@@ -35,7 +35,7 @@ describe('NoteController', () => {
         td.reset();
     });
 
-    it('create executed successfully', function () {
+    it('create executed successfully', function() {
 
         td.when(noteControllerTest.create(), {
             ignoreExtraArgs: true
@@ -47,9 +47,9 @@ describe('NoteController', () => {
 
         td.reset();
 
-    })
+    });
 
-    it('update executed successfully', function () {
+    it('update executed successfully', function() {
 
         var note = {
             id: '1234',
@@ -66,9 +66,9 @@ describe('NoteController', () => {
         assert.deepEqual(noteResult, note);
 
         td.reset();
-    })
+    });
 
-    it('delete executed successfully', function () {
+    it('delete executed successfully', function() {
 
         td.when(noteControllerTest.delete(td.matchers.isA(Number))).thenReturn('Note deleted successfully');
 
@@ -77,6 +77,6 @@ describe('NoteController', () => {
         assert.equal(result, 'Note deleted successfully');
 
         td.reset();
-    })
+    });
 
 });
