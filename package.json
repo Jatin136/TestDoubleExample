@@ -1,5 +1,5 @@
 {
-  "name": "testing-node-with-testdouble",
+  "name": "testing-with-testdouble",
   "version": "1.0.0",
   "description": "Take notes.",
   "main": "server.js",
